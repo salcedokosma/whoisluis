@@ -95,10 +95,13 @@ body {
 
 .project-card {
     background: #ffffff; /* White background */
-    border-radius: 8px;
+    border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    overflow: hidden;
+    overflow: hidden; /* Ensure content doesn't overflow */
     transition: transform 0.3s ease;
+    max-height: 300px; /* Set a maximum height for the card */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
 }
 
 .project-card:hover {
@@ -112,7 +115,7 @@ body {
 }
 
 .project-card h3 {
-    padding: 20px 20px 10px;
+    padding: 20px;
     margin: 0;
     color: #007bff; /* Primary Color */
 }
@@ -121,6 +124,27 @@ body {
     padding: 0 20px 20px;
     margin: 0;
     color: #6c757d; /* Secondary Color */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Show ellipsis for overflow text */
+    display: -webkit-box; /* Use flexbox for truncation */
+    -webkit-box-orient: vertical; /* Set orientation */
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+}
+
+.project-card a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+.project-card {
+    border: 1px solid #ddd; /* Optional: Add a border to the card */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    transition: transform 0.2s; /* Add a transition effect */
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
 }
 
 /* Contact Section */
